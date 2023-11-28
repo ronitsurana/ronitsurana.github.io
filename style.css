@@ -1,0 +1,288 @@
+.landing-page {
+  background-color: #ffffff;
+  display: flex;
+  overflow-x: hidden;
+  flex-direction: row;
+  justify-content: center;
+  width: 1519px;
+  height: 3500px;
+}
+
+.landing-page .div {
+  background-color: #ffffff;
+  width: 1519px;
+  height: 3500px;
+  position: relative;
+}
+
+.landing-page .screenshot {
+  position: absolute;
+  width: 704px;
+  height: 364px;
+  top: 2864px;
+  left: 730px;
+}
+
+.landing-page .overlap {
+  position: absolute;
+  top: 3330px;
+  left: 184px;
+  border-radius: 2px;
+}
+
+.landing-page .button-label {
+  position: absolute;
+  width: 172px;
+  top: 5px;
+  left: 0;
+  font-family: var(--medium-16-font-family);
+  font-weight: var(--medium-16-font-weight);
+  color: var(--colourmainblue-900);
+  font-size: var(--medium-16-font-size);
+  text-align: center;
+  letter-spacing: var(--medium-16-letter-spacing);
+  line-height: var(--medium-16-line-height);
+  white-space: nowrap;
+  font-style: var(--medium-16-font-style);
+  all: unset;
+  box-sizing: border-box;
+}
+
+.landing-page .flexcontainer {
+  width: 451px;
+  height: 484px;
+  top: 2803px;
+  left: 186px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  position: absolute;
+}
+
+.landing-page .text {
+  position: relative;
+  align-self: stretch;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: var(--colourmainblue-400);
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 26px;
+}
+
+.landing-page .text-wrapper {
+  font-family: var(--regular-16-font-family);
+  font-weight: var(--regular-16-font-weight);
+  color: #6f7cb2;
+  font-size: var(--regular-16-font-size);
+  letter-spacing: var(--regular-16-letter-spacing);
+  line-height: var(--regular-16-line-height);
+  font-style: var(--regular-16-font-style);
+}
+
+.landing-page .span {
+  font-weight: 700;
+}
+
+.landing-page .title {
+  position: absolute;
+  width: 546px;
+  top: 2735px;
+  left: 184px;
+  font-family: var(--medium-36-font-family);
+  font-weight: var(--medium-36-font-weight);
+  color: var(--colourmainblue-900);
+  font-size: var(--medium-36-font-size);
+  letter-spacing: var(--medium-36-letter-spacing);
+  line-height: var(--medium-36-line-height);
+  font-style: var(--medium-36-font-style);
+}
+
+.landing-page .flexcontainer-2 {
+  width: 495px;
+  height: 486px;
+  top: 2002px;
+  left: 897px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  position: absolute;
+}
+
+.landing-page .title-2 {
+  width: 495px;
+  top: 1938px;
+  left: 897px;
+  letter-spacing: var(--medium-36-letter-spacing);
+  line-height: var(--medium-36-line-height);
+  position: absolute;
+  font-family: var(--medium-36-font-family);
+  font-weight: var(--medium-36-font-weight);
+  color: var(--colourmainblue-900);
+  font-size: var(--medium-36-font-size);
+  font-style: var(--medium-36-font-style);
+}
+
+.landing-page .img {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  top: 1914px;
+  left: 155px;
+  object-fit: cover;
+}
+
+.landing-page .screenshot-2 {
+  position: absolute;
+  width: 596px;
+  height: 598px;
+  top: 1073px;
+  left: 821px;
+}
+
+.landing-page .flexcontainer-3 {
+  width: 431px;
+  height: 441px;
+  top: 1192px;
+  left: 184px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  position: absolute;
+}
+
+.landing-page .span-wrapper {
+  position: relative;
+  align-self: stretch;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: var(--colourmainblue-400);
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 26px;
+}
+
+.landing-page .text-wrapper-2 {
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #6f7cb2;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 26px;
+}
+
+.landing-page .title-3 {
+  width: 431px;
+  top: 1119px;
+  left: 182px;
+  letter-spacing: var(--medium-36-letter-spacing);
+  line-height: var(--medium-36-line-height);
+  white-space: nowrap;
+  position: absolute;
+  font-family: var(--medium-36-font-family);
+  font-weight: var(--medium-36-font-weight);
+  color: var(--colourmainblue-900);
+  font-size: var(--medium-36-font-size);
+  font-style: var(--medium-36-font-style);
+}
+
+.landing-page .overlap-group {
+  position: absolute;
+  width: 1353px;
+  height: 1024px;
+  top: 0;
+  left: 182px;
+}
+
+.landing-page .overlap-2 {
+  position: absolute;
+  width: 1353px;
+  height: 1024px;
+  top: -100px;
+  left: 0;
+}
+
+.landing-page .path {
+  position: absolute;
+  width: 966px;
+  height: 1024px;
+  top: 0;
+  left: 387px;
+  animation: transform 2s;
+}
+
+.landing-page .body {
+  position: absolute;
+  width: 520px;
+  top: 493px;
+  left: 0;
+  font-family: var(--regular-18-font-family);
+  font-weight: var(--regular-18-font-weight);
+  color: var(--colourmainblue-500);
+  font-size: var(--regular-18-font-size);
+  letter-spacing: var(--regular-18-letter-spacing);
+  line-height: var(--regular-18-line-height);
+  font-style: var(--regular-18-font-style);
+}
+
+.landing-page .p {
+  width: 560px;
+  top: 341px;
+  left: 0;
+  letter-spacing: 1px;
+  line-height: 42px;
+  position: absolute;
+  font-family: "Roboto", Helvetica;
+  font-weight: 500;
+  color: var(--colourmainblue-900);
+  font-size: 36px;
+}
+
+.landing-page .marvel-miss-minutes {
+  position: absolute;
+  width: 793px;
+  height: 745px;
+  top: 195px;
+  left: 560px;
+}
+
+.landing-page .landie {
+  position: absolute;
+  width: 311px;
+  top: 34px;
+  left: 430px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 900;
+  color: #fe9637;
+  font-size: 64px;
+  letter-spacing: 0;
+  line-height: 38px;
+}
+
+.landing-page .overlap-group-2 {
+  position: absolute;
+  width: 111px;
+  height: 39px;
+  top: 593px;
+  left: 0;
+  border-radius: 2px;
+}
+
+.buttono {
+  background-color: #fe9637;
+  border: none;
+  border-radius: 12px;
+  color: rgb(0, 0, 0);
+  padding: 15px 25px;
+  font-size: 16px;
+  white-space: nowrap;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}

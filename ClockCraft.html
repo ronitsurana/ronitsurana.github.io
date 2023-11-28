@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to ClockCraft</title>
+    <script type="text/javascript" src="script.js" defer></script>
+    <style>
+        
+        #popup {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100px;
+            background-color: #ffffff;
+            z-index: 2;
+            padding: 5px;
+            display: none;
+            border-radius: 10px;
+        }
+
+        #overlay-back {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000000;
+            opacity: 0.2;
+            filter: alpha(opacity=100);
+            z-index: 1;
+            display: none;
+        }
+
+        #overlay-back.active {
+            display: block;
+        }
+
+        #popup.active {
+            display: block;
+        }
+
+        #close-image {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+        }
+        
+        
+        @media screen and (max-width: 1400px) {
+            #popup {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: scale(.75) translate(-69%, -50%);
+                width: 500px;
+                height: 180px;
+                background-color: #ffffff;
+                z-index: 2;
+                padding: 10px;
+                display: none;
+                border-radius: 10px;
+            }
+
+            
+        }
+    </style>
+</head>
+
+<body style="touch-action:pan-y">
+    <div id="div1" data-value="clock">
+        <canvas width="300" height="300" style="border: 1px solid rgb(0, 0, 0);"></canvas>
+        <canvas width="300" height="300" style="border: 1px solid rgb(0, 0, 0);"></canvas>
+        <canvas width="300" height="300" style="border: 1px solid rgb(0, 0, 0);"></canvas>
+        <canvas width="300" height="300" style="border: 1px solid rgb(0, 0, 0);"></canvas>
+    </div>
+
+
+    <div id="overlay-back"></div>
+    <div id="popup">
+        <div style="width: 100%;height: 100px;">
+            <input type="color" id="color" value="#000000" />
+            <input type="button" class="btn btn-dark" id="stopWatch" value="StopWatch" data-value="1" />
+            <input type="button" class="btn btn-dark" id="timer" value="Timer" />
+            <input type="button" class="btn btn-dark" id="secondTimer" value="SecondTimer" />&nbsp;&nbsp;&nbsp;&nbsp;
+            <label for="zone">Choose a TimeZone:</label>&nbsp;
+            <select id="zone" name="zone">
+
+            </select>
+            <label for="file">Choose an Image:</label>
+            <input type="file" id="file" name="file" accept="image/*" />
+            <input type="button" class="btn btn-success" id="apply" value="Apply" />
+            <input type="button" class="btn btn-danger" id="close" value="Close" />
+            <input type="button" class="btn btn-dark" id="remove" value="Remove Background" />
+            <button id="pipButton" style="position: fixed;bottom: 0;right: 0;">PIP</button>
+        </div>
+    </div>
+    
+</body>
+
+</html>
