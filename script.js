@@ -17,13 +17,12 @@ document.head.appendChild(scriptColor);
 
 var alignment = document.getElementsByTagName("canvas");
 for (var i = 0; i < alignment.length; i++) {
-    if ((innerWidth - (4 * alignment[0].width) / 5.4) < 0 || ((innerHeight - (alignment[0].height)) / 2) < 0) {
+    if (((innerWidth - (4 * alignment[0].width)) / 5.4) < 0 || ((innerHeight - (alignment[0].height)) / 2) < 0) {
         alignment[i].style.marginLeft = "0px";
         alignment[i].style.marginTop = "0px";
-    }
-    else {
+    } else {
         alignment[i].style.marginLeft = (innerWidth - (4 * alignment[0].width)) / 5.4 + "px";
-        alignment[i].style.marginTop = (innerHeight - (alignment[0].height)) / 2 + "px"
+        alignment[i].style.marginTop = (innerHeight - (alignment[0].height)) / 2 + "px";
     }
 }
 
