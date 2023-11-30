@@ -305,6 +305,8 @@ class clockClass {
         let varName = document.getElementById("stopWatch").getAttribute("data-value");
         if (varName == 1) {
             document.getElementById("stopWatch").setAttribute("data-value", "2");
+            document.getElementById("stopWatch").setAttribute("class", "btn btn-danger");
+            document.getElementById("stopWatch").setAttribute("value", "     Stop     ");
             const date = new Date();
             const date1 = new Date(Date.parse(date.toLocaleString('en-US', {
                 timeZone: this.defaultZone,
@@ -315,6 +317,8 @@ class clockClass {
         }
         else {
             document.getElementById("stopWatch").setAttribute("data-value", "1");
+            document.getElementById("stopWatch").setAttribute("class", "btn btn-dark");
+            document.getElementById("stopWatch").setAttribute("value", "StopWatch");
             var timeHrs = 0, timeMin = 0, timeSec = 0;
             const date = new Date();
             const date1 = new Date(Date.parse(date.toLocaleString('en-US', {
