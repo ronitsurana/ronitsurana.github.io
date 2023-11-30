@@ -45,7 +45,7 @@ ClockCraft
 
 **--Picture-in-Picture (PiP)--**
 
-  Click the "PiP" button to open the clock in Picture-in-Picture mode. Note that not all browsers may support this feature, it is tested on Chrome Version 119.0.6045.199 on desktop.
+  Click the "PiP" button to open the clock in Picture-in-Picture mode. Note that not all browsers may support this feature, it is tested on Chrome Version 119.0.6045.200 on desktop.
   Future builds may enable the PiP feature for other browsers and mobile browsers.
   
 **--Additional Configuration--**
