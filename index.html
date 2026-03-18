@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="globals.css" />
+  <link rel="stylesheet" href="styleguide.css" />
+  <link rel="stylesheet" href="style.css" />
+  <title>ClockCraft v2.0</title>
+</head>
+
+<body>
+  <div class="landing-page">
+    <div class="div">
+      <img class="screenshot" src="img/screenshot-16-upscayl-16x-realesrgan-x4plus-1.webp" />
+      <div class="overlap">
+        <button class="buttono" onclick="hello2()">Learn more</button>
+      </div>
+      <div class="title">Explore the Full Documentation:</div>
+      <div class="flexcontainer">
+        <p class="text">
+          <span class="text-wrapper">Everything you need to get the most out of ClockCraft — from setup to advanced customization.<br /></span>
+        </p>
+        <p class="text">
+          <span class="span">Design Your Perfect Clock:<br /></span>
+        </p>
+        <p class="text">
+          <span class="text-wrapper">Step-by-step guides to customize colors, hand styles, and backgrounds so every clock feels uniquely yours.<br /></span>
+        </p>
+        <p class="text">
+          <span class="span">World Time at a Glance:<br /></span>
+        </p>
+        <p class="text">
+          <span class="text-wrapper">Clear instructions for assigning any IANA timezone to each clock — keep track of multiple cities simultaneously.<br /></span>
+        </p>
+        <p class="text">
+          <span class="span">Timer &amp; Stopwatch Mastery:<br /></span>
+        </p>
+        <p class="text">
+          <span class="text-wrapper">Learn how to set countdowns and measure elapsed time with precision, right from the settings panel.<br /></span>
+        </p>
+        <p class="text">
+          <span class="span">Picture-in-Picture Mode:<br /></span>
+        </p>
+        <p class="text">
+          <span class="text-wrapper">Pop any clock into a floating overlay that stays visible across all your tabs and windows — zero interruptions.<br /></span>
+        </p>
+        <p class="text">
+          <span class="text-wrapper">Ready to dive deeper? Click below to open the full documentation:</span>
+        </p>
+      </div>
+
+      <div class="flexcontainer-2">
+        <p class="text">
+          <span class="span">Build Your Clock:<br /></span>
+        </p>
+        <p class="text">
+          <span class="text-wrapper">Open the settings panel and pick a hand color that matches your style — changes apply instantly with no reload.<br /></span>
+        </p>
+        <p class="text">
+          <span class="text-wrapper">Set a custom background image to give each clock its own personality and visual context.<br /></span>
+        </p>
+        <p class="text">
+          <span class="span">Set Your Timezone:<br /></span>
+        </p>
+        <p class="text">
+          <span class="text-wrapper">Choose from every IANA timezone — your clock updates the moment you apply. Run multiple clocks across different regions side by side.<br /></span>
+        </p>
+        <p class="text">
+          <span class="span">Timer &amp; Stopwatch:<br /></span>
+        </p>
+        <p class="text">
+          <span class="text-wrapper">Start a countdown or a stopwatch directly from the settings bar — no extra apps needed.<br /></span>
+        </p>
+        <p class="text">
+          <span class="span">Picture-in-Picture:<br /></span>
+        </p>
+        <p class="text">
+          <span class="text-wrapper">Tap PiP to float any clock in its own persistent window — it stays on top while you work in other tabs.</span>
+        </p>
+      </div>
+      <div class="title-2">How It Works:</div>
+      <img class="img" src="img/screenshot-2023-11-22-214037-upscayl-16x-realesrgan-x4plus-1.webp" />
+      <img class="screenshot-2" src="img/screenshot-2023-11-21-160354-upscayl-16x-realesrgan-x4plus-1.webp" />
+      <div class="title-3">Core Highlights:</div>
+      <div class="flexcontainer-3">
+        <p class="span-wrapper">
+          <span class="span">Minimal, Customizable Design:<br /></span>
+        </p>
+        <p class="span-wrapper">
+          <span class="text-wrapper-2">A clean canvas-rendered analog clock with hand color, background image, and two themes — light and dark.<br /></span>
+        </p>
+        <p class="span-wrapper">
+          <span class="span">Global Timezone Support:<br /></span>
+        </p>
+        <p class="span-wrapper">
+          <span class="text-wrapper-2">Assign any IANA timezone to any clock. Run four world clocks simultaneously and stay in sync globally.<br /></span>
+        </p>
+        <p class="span-wrapper">
+          <span class="span">Built-in Timer &amp; Stopwatch:<br /></span>
+        </p>
+        <p class="span-wrapper">
+          <span class="text-wrapper-2">Count down or count up without leaving the page — your timekeeping tools are always one click away.<br /></span>
+        </p>
+        <p class="span-wrapper">
+          <span class="span">Picture-in-Picture Mode:<br /></span>
+        </p>
+        <p class="span-wrapper">
+          <span class="text-wrapper-2">Float any clock above your other windows with one click — always visible, never in the way.</span>
+        </p>
+      </div>
+      <div class="overlap-group">
+        <div class="overlap-2">
+          <img class="path" src="img/path.svg" />
+          <p class="body">
+            ClockCraft is an open-source clock app built with vanilla JavaScript and Canvas. Run multiple analog clocks across different time zones, tweak every detail from hand color to background image, and pop any clock into a floating Picture-in-Picture window — all with a minimal, theme-aware interface that feels at home on any setup.
+          </p>
+          <p class="p">Welcome to ClockCraft&nbsp;&nbsp;<br />Time, Your Way.</p>
+          <img class="marvel-miss-minutes" src="img/marvel-miss-minutes-pack-upscayl-16x-realesrgan-x4plus-1.webp" />
+
+        </div>
+        <div class="landie">ClockCraft</div>
+        <div class="overlap-group-2">
+          <button class="buttono" onclick="hello()">Get Started</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function hello() {
+      window.location.href = "ClockCraft.html";
+    }
+    function hello2() {
+      window.location.href = "Documentation.html";
+    }
+  </script>
+
+  <script>
+    window.addEventListener('scroll', function () {
+      var scrollPosition = window.scrollY;
+      var pathElement = document.querySelector('.landing-page .path');
+
+      pathElement.style.transform = 'translateX(' + scrollPosition + 'px)';
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClockCraft v2.0</title>
+    <script type="text/javascript" src="script.js" defer></script>
+    <link rel="stylesheet" href="clock.css">
+</head>
+
+<body>
+    <!-- Theme toggle -->
+    <button id="themeToggle" title="Toggle theme">🌙</button>
+
+    <!-- Clocks -->
+    <div id="div1" data-value="clock">
+        <canvas width="300" height="300"></canvas>
+        <canvas width="300" height="300"></canvas>
+        <canvas width="300" height="300"></canvas>
+        <canvas width="300" height="300"></canvas>
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay-back"></div>
+
+    <!-- Settings bar -->
+    <div id="popup">
+        <div class="popup-row">
+
+            <span class="popup-label">Color</span>
+            <input type="color" id="color" class="cc-color-input" value="#000000" />
+
+            <div class="popup-sep"></div>
+
+            <input type="button" class="cc-btn" id="stopWatch" value="StopWatch" data-value="1" />
+            <input type="button" class="cc-btn" id="timer" value="Timer" />
+            <input type="button" class="cc-btn" id="secondTimer" value="SecondTimer" />
+
+            <div class="popup-sep"></div>
+
+            <span class="popup-label">Timezone</span>
+            <select id="zone" name="zone" class="cc-select"></select>
+
+            <div class="popup-sep"></div>
+
+            <label for="file" class="cc-btn" id="fileLabel">📁 Choose Image</label>
+            <input type="file" id="file" name="file" accept="image/*" style="display:none;" />
+
+            <div class="popup-sep"></div>
+
+            <input type="button" class="cc-btn cc-btn--primary" id="apply" value="Apply" />
+            <input type="button" class="cc-btn" id="close" value="Close" />
+            <input type="button" class="cc-btn" id="remove" value="Remove BG" />
+
+            <div class="popup-sep"></div>
+
+            <span class="popup-label">Window</span>
+            <button id="pipButton"   class="cc-btn" title="Document PiP (Chrome 116+)">PiP</button>
+            <button id="floatButton" class="cc-btn" title="Draggable widget (all browsers)">Float</button>
+            <button id="popupButton" class="cc-btn" title="Minimal popup (all browsers)">Popup</button>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

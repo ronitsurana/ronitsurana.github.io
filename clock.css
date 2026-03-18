@@ -1,0 +1,323 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
+
+/* ── CSS Variables — Dark & Light Themes ────────────── */
+:root {
+  --bg:        #111111;
+  --bg-popup:  rgba(20, 20, 20, 0.97);
+  --border:    rgba(255, 255, 255, 0.08);
+  --text:      #f0f0f0;
+  --text-muted:#888;
+  --accent:    #fe9637;
+  --btn-bg:    rgba(255, 255, 255, 0.06);
+  --btn-hover: rgba(255, 255, 255, 0.12);
+  --btn-border:rgba(255, 255, 255, 0.1);
+  --select-bg: rgba(255, 255, 255, 0.06);
+  --clock-bg0: #1c1c1c;
+  --clock-bg1: #111111;
+  --clock-ring:rgba(255, 255, 255, 0.06);
+  --clock-tick:rgba(255, 255, 255, 0.35);
+  --clock-tickminor:rgba(255, 255, 255, 0.1);
+  --clock-num: rgba(255, 255, 255, 0.35);
+  --clock-hand:#e8e8e8;
+  --divider:   rgba(255, 255, 255, 0.07);
+}
+
+[data-theme="light"] {
+  --bg:        #f5f5f5;
+  --bg-popup:  rgba(255, 255, 255, 0.97);
+  --border:    rgba(0, 0, 0, 0.08);
+  --text:      #111111;
+  --text-muted:#888;
+  --accent:    #e07f1a;
+  --btn-bg:    rgba(0, 0, 0, 0.04);
+  --btn-hover: rgba(0, 0, 0, 0.08);
+  --btn-border:rgba(0, 0, 0, 0.1);
+  --select-bg: rgba(0, 0, 0, 0.04);
+  --clock-bg0: #ffffff;
+  --clock-bg1: #f0f0f0;
+  --clock-ring:rgba(0, 0, 0, 0.06);
+  --clock-tick:rgba(0, 0, 0, 0.4);
+  --clock-tickminor:rgba(0, 0, 0, 0.12);
+  --clock-num: rgba(0, 0, 0, 0.35);
+  --clock-hand:#222222;
+  --divider:   rgba(0, 0, 0, 0.07);
+}
+
+/* ── Reset & Base ───────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ── Canvas ─────────────────────────────────────────── */
+canvas {
+  border: none !important;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+canvas:hover {
+  opacity: 0.88;
+}
+
+/* ── Theme Toggle Button ────────────────────────────── */
+#themeToggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--btn-border);
+  background: var(--btn-bg);
+  color: var(--text);
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  line-height: 1;
+}
+
+#themeToggle:hover {
+  background: var(--btn-hover);
+  transform: scale(1.08);
+}
+
+/* ── Popup bar ──────────────────────────────────────── */
+#popup {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  background: var(--bg-popup);
+  border-bottom: 1px solid var(--border);
+  z-index: 200;
+  padding: 12px 20px;
+  display: none;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+#popup.active { display: block; }
+
+#overlay-back {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  display: none;
+}
+
+[data-theme="light"] #overlay-back {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+#overlay-back.active { display: block; }
+
+/* ── Popup layout ───────────────────────────────────── */
+.popup-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.popup-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.popup-sep {
+  width: 1px;
+  height: 28px;
+  background: var(--divider);
+  flex-shrink: 0;
+}
+
+/* ── Buttons ────────────────────────────────────────── */
+.cc-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--btn-border);
+  background: var(--btn-bg);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+
+.cc-btn:hover {
+  background: var(--btn-hover);
+}
+
+.cc-btn:active {
+  transform: scale(0.97);
+}
+
+.cc-btn--primary {
+  background: var(--accent);
+  color: #fff;
+  border-color: transparent;
+}
+
+.cc-btn--primary:hover {
+  opacity: 0.88;
+}
+
+.cc-btn--danger {
+  color: #e05252;
+  border-color: rgba(224, 82, 82, 0.2);
+  background: rgba(224, 82, 82, 0.06);
+}
+
+.cc-btn--danger:hover {
+  background: rgba(224, 82, 82, 0.12);
+}
+
+/* ── Form controls ──────────────────────────────────── */
+.cc-select {
+  padding: 7px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--btn-border);
+  background: var(--select-bg);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  min-width: 160px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.cc-select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.cc-color-input {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--btn-border);
+  border-radius: 8px;
+  cursor: pointer;
+  background: transparent;
+  padding: 3px;
+}
+
+.cc-color-input::-webkit-color-swatch-wrapper { padding: 0; }
+.cc-color-input::-webkit-color-swatch {
+  border: none;
+  border-radius: 5px;
+}
+
+/* ── Scrollbar ──────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--divider);
+  border-radius: 2px;
+}
+
+/* -- Floating Clock Widget ---------------------------- */
+.cc-float {
+  position: fixed;
+  z-index: 600;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--bg-popup);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.35);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  user-select: none;
+  transition: box-shadow 0.2s;
+}
+
+.cc-float:hover {
+  box-shadow: 0 12px 50px rgba(0,0,0,0.45);
+}
+
+.cc-float__bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  cursor: grab;
+  border-bottom: 1px solid var(--border);
+  gap: 8px;
+}
+
+.cc-float__bar:active { cursor: grabbing; }
+
+.cc-float__zone {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  flex: 1;
+}
+
+.cc-float__close {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid var(--btn-border);
+  background: var(--btn-bg);
+  color: var(--text);
+  font-size: 0.7rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.15s;
+  line-height: 1;
+}
+
+.cc-float__close:hover { background: rgba(224,82,82,0.2); color: #e05252; border-color: rgba(224,82,82,0.3); }
+
+.cc-float__body {
+  padding: 12px 12px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.cc-float__time {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  font-variant-numeric: tabular-nums;
+}

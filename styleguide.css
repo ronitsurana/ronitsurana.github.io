@@ -1,0 +1,29 @@
+:root {
+  --colourmainblue-900: rgba(9, 17, 51, 1);
+  --colourmainblue-400: rgba(111, 124, 178, 1);
+  --colourmainblue-500: rgba(80, 95, 152, 1);
+  --medium-16-font-family: "Roboto-Medium", Helvetica;
+  --medium-16-font-weight: 500;
+  --medium-16-font-size: 16px;
+  --medium-16-letter-spacing: 0px;
+  --medium-16-line-height: 26px;
+  --medium-16-font-style: normal;
+  --regular-16-font-family: "Roboto-Regular", Helvetica;
+  --regular-16-font-weight: 400;
+  --regular-16-font-size: 16px;
+  --regular-16-letter-spacing: 0px;
+  --regular-16-line-height: 26px;
+  --regular-16-font-style: normal;
+  --medium-36-font-family: "Roboto-Medium", Helvetica;
+  --medium-36-font-weight: 500;
+  --medium-36-font-size: 36px;
+  --medium-36-letter-spacing: 0px;
+  --medium-36-line-height: 48px;
+  --medium-36-font-style: normal;
+  --regular-18-font-family: "Roboto-Regular", Helvetica;
+  --regular-18-font-weight: 400;
+  --regular-18-font-size: 18px;
+  --regular-18-letter-spacing: 0px;
+  --regular-18-line-height: 30px;
+  --regular-18-font-style: normal;
+}

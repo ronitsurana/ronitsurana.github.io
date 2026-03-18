@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClockCraft Documentation</title>
+    <link rel="stylesheet" href="clock.css">
+    <style>
+        body {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 32px;
+            line-height: 1.8;
+        }
+        h1 { 
+            background: linear-gradient(135deg, #fe9637, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 2.4rem;
+            margin-bottom: 8px;
+        }
+        h2 {
+            color: #fe9637;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        h3 {
+            color: #e0e0f0;
+            margin-top: 24px;
+            margin-bottom: 8px;
+        }
+        p, li {
+            color: rgba(192, 192, 216, 0.8);
+            font-size: 0.95rem;
+        }
+        code {
+            background: rgba(255,255,255,0.06);
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: #fe9637;
+        }
+        pre {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 20px;
+            overflow-x: auto;
+            color: #c0c0d8;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+        ul { padding-left: 24px; }
+        li { margin-bottom: 6px; }
+        a { color: #fe9637; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .badge--new { background: rgba(76,175,80,0.15); color: #4caf50; }
+        .badge--changed { background: rgba(254,150,55,0.15); color: #fe9637; }
+        .badge--removed { background: rgba(255,82,82,0.15); color: #ff5252; }
+    </style>
+</head>
+
+<body>
+
+    <h1>ClockCraft Documentation</h1>
+    <p>A modern, customizable multi-clock application built with vanilla JavaScript and Canvas.</p>
+
+    <h2>Overview</h2>
+    <p>
+        ClockCraft lets you create multiple analog clocks on a single page, each displaying a different time zone.
+        The application features a dark glassmorphism UI, premium clock rendering, and built-in timer/stopwatch tools.
+    </p>
+
+    <h2>Getting Started</h2>
+    <h3>Opening the App</h3>
+    <p>Open <code>ClockCraft.html</code> in a modern browser. Four default clocks will appear (Asia/Kolkata, America/New_York, Europe/London, Asia/Tokyo).</p>
+
+    <h3>Adding Clocks</h3>
+    <p>Click the <strong>"+ Add Clock"</strong> button in the header. You can add as many clocks as you need.</p>
+
+    <h3>Choosing Clock Size</h3>
+    <p>Use the size dropdown in the header to switch between <strong>Small</strong> (220px), <strong>Medium</strong> (280px), and <strong>Large</strong> (360px). All clocks resize together.</p>
+
+    <h2>Clock Customization</h2>
+    <p>Click any clock face or the <strong>"⚙ Settings"</strong> button to open the settings sidebar.</p>
+
+    <h3>Hand Color</h3>
+    <p>Use the color picker to change the hour and minute hand color. The second hand always uses the accent orange.</p>
+
+    <h3>Time Zone</h3>
+    <p>Select any IANA time zone from the dropdown. The clock and its label update immediately on Apply.</p>
+
+    <h3>Background Image</h3>
+    <ul>
+        <li>Click <strong>"Choose an image…"</strong> to select a local image file.</li>
+        <li>On Apply, the image is set as the clock's background and you're prompted to auto-set the hand color for contrast.</li>
+        <li>Click <strong>"Remove BG"</strong> in the sidebar to clear the background.</li>
+    </ul>
+
+    <h2>Timer &amp; Stopwatch</h2>
+
+    <h3>Timer</h3>
+    <p>Enter hours, minutes, and seconds in the sidebar <strong>"Timer"</strong> section and click <strong>Start</strong>. A modal notification appears when time is up.</p>
+
+    <h3>Quick Timer</h3>
+    <p>Enter a number of seconds in the <strong>"Quick Timer"</strong> field and click <strong>Start</strong>. Great for short countdowns.</p>
+
+    <h3>Stopwatch</h3>
+    <p>Click <strong>▶ Start</strong> to begin. The display updates live. Click <strong>⏸ Pause</strong> to pause, and <strong>↺ Reset</strong> to clear.</p>
+
+    <h2>Picture-in-Picture (PiP)</h2>
+    <p>
+        With a clock selected in the sidebar, click <strong>"PiP"</strong> to pop the clock into a floating browser window.
+        Closing the PiP window returns the clock to the page. Requires Chrome 116+ with Document PiP support.
+    </p>
+
+    <h2>Architecture</h2>
+
+    <h3>ClockCraft Class</h3>
+    <pre><code>class ClockCraft {
+  constructor(container, { width, height, color, timezone })
+  setColor(hex)           // Change hand color
+  setTimezone(tz)         // Change IANA timezone
+  setBackgroundImage(url) // Set background image
+  removeBackgroundImage() // Clear background
+  getComplementColor()    // Get complement of avg background color
+  resize(size)            // Resize the clock
+  openConfig()            // Open sidebar for this clock
+  destroy()               // Remove clock from page
+  static clocks           // Array of all clock instances
+  static activeClock      // Currently selected clock
+}</code></pre>
+
+    <h3>Rendering</h3>
+    <p>
+        Each clock uses a single <code>&lt;canvas&gt;</code> element rendered at 60fps via <code>requestAnimationFrame</code>.
+        The clock face includes: radial gradient background, minor &amp; major tick marks, hour numbers, tapered hour/minute hands,
+        a glowing second hand with tail, and a gradient center dot.
+    </p>
+
+    <h2>Dependencies</h2>
+    <ul>
+        <li><strong>Bootstrap 5.3.8</strong> — loaded via jsDelivr CDN (CSS + JS bundle)</li>
+        <li><strong>Inter font</strong> — loaded via Google Fonts</li>
+        <li><span class="badge badge--removed">Removed</span> <strong>Colors.js</strong> — replaced with a native 3-line complement color function</li>
+    </ul>
+
+    <h2>Browser Support</h2>
+    <ul>
+        <li>Chrome 90+ (PiP requires 116+)</li>
+        <li>Firefox 90+</li>
+        <li>Safari 15+</li>
+        <li>Edge 90+</li>
+    </ul>
+
+    <h2>License</h2>
+    <p>Open-source under the MIT License.</p>
+
+</body>
+</html>
